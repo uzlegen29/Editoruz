@@ -16,28 +16,28 @@ THEMES = {
         'background': '#ffffff',
         'secondary': '#f0f0f0',
         'foreground': '#222222',
-        'keyword': '#0057b7',
+        'keyword': "#adc7c0",
         'string': '#008000',
         'comment': '#888888',
-        'accent': '#0057b7'
+        'accent': "#d1b4a9"
     },
     'Dark': {
         'background': '#23272e',
         'secondary': '#1e1e1e',
         'foreground': '#e6e6e6',
-        'keyword': '#569CD6',
+        'keyword': "#0B0B0C",
         'string': '#98C379',
         'comment': '#6A9955',
-        'accent': '#569CD6'
+        'accent': "#060708"
     },
     'Monokai': {
         'background': '#272822',
         'secondary': '#3e3d32',
         'foreground': '#f8f8f2',
-        'keyword': '#f92672',
+        'keyword': "#20181b",
         'string': '#e6db74',
         'comment': '#75715e',
-        'accent': '#f92672'
+        'accent': "#2b292a"
     },
 }
 DEFAULT_THEME = 'Dark'
@@ -261,7 +261,7 @@ class LibraryManager(QDialog):
     def refresh(self):
         self.list_widget.clear()
         try:
-            import pkg_resources
+            import pkg_resources # type: ignore
             for d in pkg_resources.working_set:
                 self.list_widget.addItem(f"{d.project_name}=={d.version}")
         except Exception:
